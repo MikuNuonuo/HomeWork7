@@ -1,0 +1,4 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\Users\Administrator\Downloads\W7_ZooManager_HW\W7_ZooManager_HW\ZooManager\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\Administrator\Downloads\W7_ZooManager_HW\W7_ZooManager_HW\ZooManager\obj\Debug\net5.0\scopedcss\bundle\" />
+</StaticWebAssets>

@@ -1,0 +1,123 @@
+﻿@page "/"
+@using ZooManager
+
+<style>
+
+    button {
+        width: 75px;
+        height: 75px;
+        font-size: 50px;
+    }
+
+        button.sm {
+            display: inline-flex;
+            width: 50px;
+            height: 50px;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h1 style="text-align:end">Add Zones:</h1>
+        </div>
+        <div class="col-1">
+            <button @onclick="@(() => Game.AddZones(Direction.down))"
+                    type="button" class="sm btn btn-outline-dark">
+                <h2>⏬</h2>
+            </button>
+        </div>
+        @*<div class="col-1">
+                <button @onclick="@(() => Game.AddZones(Direction.up))"
+                        type="button" class="sm btn btn-outline-dark">
+                    <h2>⏫</h2>
+                </button>
+            </div>*@
+        @*<div class="col-1">
+                <button @onclick="@(() => Game.AddZones(Direction.left))"
+                        type="button" class="sm btn btn-outline-dark">
+                    <h2>⏪</h2>
+                </button>
+            </div>*@
+        <div class="col-1">
+            <button @onclick="@(() => Game.AddZones(Direction.right))"
+                    type="button" class="sm btn btn-outline-dark">
+                <h2>⏩</h2>
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <h1 style="text-align:end">Add Animal to Holding:</h1>
+        </div>
+        <div class="col-1">
+            <button @onclick="@(() => Game.AddAnimalToHolding("cat"))"
+                    type="button" class="sm btn btn-outline-dark">
+                <h2>🐱</h2>
+            </button>
+        </div>
+        <div class="col-1">
+            <button @onclick="@(() => Game.AddAnimalToHolding("mouse"))"
+                    type="button" class="sm btn btn-outline-dark">
+                <h2>🐭</h2>
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <h1 style="text-align:end">Holding Pen:</h1>
+        </div><div class="col-6">
+            <button disabled type="button" class="btn btn-outline-dark">
+                <h2>@Zoo.holdingPen.emoji<sup>@Zoo.holdingPen.rtLabel</sup><sup>@Zoo.holdingPen.connection</sup><sup>@Zoo.holdingPen.turn</sup></h2>
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table align="center">
+                @for (var y = 0; y < Zoo.numCellsY; y++)
+                {
+                    <tr>
+                        @for (var x = 0; x < Zoo.numCellsX; x++)
+                        {
+                            var a = Zoo.animalZones[y][x];
+                            <td>
+                                <button @onclick="@(() => Game.ZoneClick(a))"
+                                        type="button" class="btn btn-outline-dark">
+                                    <h2>@a.emoji<sup>@a.rtLabel</sup><sup>@a.connection</sup><sup>@a.turn</sup></h2>
+                                </button>
+                            </td>
+                        }
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        Game.SetUpGame();
+    }
+}
+
+
