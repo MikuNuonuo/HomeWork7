@@ -1145,19 +1145,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
+    "C:\\Users\\78649\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Downloads\\W7_ZooManager_HW\\W7_ZooManager_HW\\ZooManager\\ZooManager.csproj",
+      "projectUniqueName": "E:\\6308\\hw7\\HomeWork7-main\\HomeWork7-main\\W7_ZooManager_HW\\ZooManager\\ZooManager.csproj",
       "projectName": "ZooManager",
-      "projectPath": "C:\\Users\\Administrator\\Downloads\\W7_ZooManager_HW\\W7_ZooManager_HW\\ZooManager\\ZooManager.csproj",
-      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Downloads\\W7_ZooManager_HW\\W7_ZooManager_HW\\ZooManager\\obj\\",
+      "projectPath": "E:\\6308\\hw7\\HomeWork7-main\\HomeWork7-main\\W7_ZooManager_HW\\ZooManager\\ZooManager.csproj",
+      "packagesPath": "C:\\Users\\78649\\.nuget\\packages\\",
+      "outputPath": "E:\\6308\\hw7\\HomeWork7-main\\HomeWork7-main\\W7_ZooManager_HW\\ZooManager\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\78649\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

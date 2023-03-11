@@ -70,6 +70,12 @@
                 <h2>🐭</h2>
             </button>
         </div>
+        <div class="col-1">
+            <button @onclick="@(() => Game.AddAnimalToHolding("raptor"))"
+                    type="button" class="sm btn btn-outline-dark">
+                <h2>🦅</h2>
+            </button>
+        </div>
     </div>
     <div class="row">
         <div class="col">
@@ -80,9 +86,10 @@
         <div class="col-6">
             <h1 style="text-align:end">Holding Pen:</h1>
         </div><div class="col-6">
-            <button disabled type="button" class="btn btn-outline-dark">
-                <h2>@Zoo.holdingPen.emoji<sup>@Zoo.holdingPen.rtLabel</sup><sup>@Zoo.holdingPen.connection</sup><sup>@Zoo.holdingPen.turn</sup></h2>
-            </button>
+                  <button disabled type="button" class="btn btn-outline-dark">
+                      <!--(feature r) using "-" to connect reaction time and turn on the board like 3-5. The first number means reaction time and the second number indicates turn number on the board.-->
+                      <h2>@Zoo.holdingPen.emoji<sup>@Zoo.holdingPen.rtLabel</sup><sup>@Zoo.holdingPen.connection</sup><sup>@Zoo.holdingPen.turn</sup></h2>
+                  </button>
         </div>
     </div>
     <div class="row">

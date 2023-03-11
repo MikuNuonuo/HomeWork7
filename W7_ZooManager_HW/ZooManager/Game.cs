@@ -6,6 +6,8 @@ namespace ZooManager
     public class Game
     {
         
+        static private readonly int DIE_AFTER_TURNS = 3;
+
         static public void SetUpGame()
         {
             Zoo.CreateZoo();
@@ -55,6 +57,7 @@ namespace ZooManager
             if (Zoo.holdingPen.occupant != null) return;
             if (animalType == "cat") Zoo.holdingPen.occupant = new Cat("Fluffy");
             if (animalType == "mouse") Zoo.holdingPen.occupant = new Mouse("Squeaky");
+            if (animalType == "raptor") Zoo.holdingPen.occupant = new Raptor("Woo");
             Console.WriteLine($"Holding pen occupant at {Zoo.holdingPen.occupant.location.x},{Zoo.holdingPen.occupant.location.y}");
             ActivateAnimals();
         }
@@ -93,9 +96,13 @@ namespace ZooManager
                         // (feature o)reset to not moved in new turn
                         zone.occupant.isCurrentMoved = false;
                         // (feature p) cat will die after 3 turns
-                        if (zone.occupant.species == "cat" && zone.occupant.turn > 3)
+                        if (zone.occupant.species == "cat" && zone.occupant.turn > DIE_AFTER_TURNS)
                         {
                             zone.occupant = new Skull(zone.occupant.name + "'s skull"); ;
+                        }
+                        else if (zone.occupant.species == "raptor" && zone.occupant.turn > DIE_AFTER_TURNS)
+                        {
+                                zone.occupant = new Skull(zone.occupant.name + "'s skull"); ;
                         }
                         // (feature q)mouse will try to Reproduce after 3 turns
                         if (zone.occupant.species == "mouse" && zone.occupant.turn > 3)
